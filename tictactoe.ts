@@ -45,7 +45,7 @@ export class TicTacToe {
     ];
 
     for (const condition of winConditions) {
-      const [a, b, c] = condition;
+      const [a, b, c] = condition as [POSITION, POSITION, POSITION];
       if (this.board[a] !== " " && this.board[a] === this.board[b] && this.board[a] === this.board[c]) {
         return this.board[a];
       }
