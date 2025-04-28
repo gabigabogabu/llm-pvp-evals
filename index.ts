@@ -92,7 +92,7 @@ const main = async () => {
     const ticTacToe = new TicTacToe();
     const chat: AugmentedChatMessage[] = [];
     chat.push({
-      role: "system",
+      role: "developer",
       content: `You are playing Tic Tac Toe. You play by responding with the field you want to take. The last field you mention will be taken as your move. The fields are: ${ticTacToe.getOpenFields().join(", ")}.`,
       visibleTo: ['X', 'O'],
     });
@@ -135,8 +135,7 @@ const main = async () => {
         .pop() as POSITION | undefined;
       if (move) {
         ticTacToe.take(move, turn);
-      } 
-      else {
+      } else {
         console.error(`No move for response, skipping turn: ${response}`);
       }
       turn = turn === 'X' ? 'O' : 'X';
