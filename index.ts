@@ -125,6 +125,7 @@ const main = async () => {
         content: response,
         visibleTo: [turn],
         model: matchup[turn],
+        author: turn,
       });
       const move: POSITION | undefined = response
         .split(/\W+/)
@@ -151,4 +152,6 @@ const main = async () => {
   }
 }
 
-main();
+if (require.main === module) {
+  main();
+}

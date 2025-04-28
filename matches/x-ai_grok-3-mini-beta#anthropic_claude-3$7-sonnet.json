@@ -37,6 +37,7 @@
       "visibleTo": [
         "X"
       ],
+      "author": "X",
       "model": "x-ai/grok-3-mini-beta"
     },
     {
@@ -53,6 +54,7 @@
       "visibleTo": [
         "O"
       ],
+      "author": "O",
       "model": "anthropic/claude-3.7-sonnet"
     },
     {
@@ -69,6 +71,7 @@
       "visibleTo": [
         "X"
       ],
+      "author": "X",
       "model": "x-ai/grok-3-mini-beta"
     },
     {
@@ -85,6 +88,7 @@
       "visibleTo": [
         "O"
       ],
+      "author": "O",
       "model": "anthropic/claude-3.7-sonnet"
     },
     {
@@ -101,6 +105,7 @@
       "visibleTo": [
         "X"
       ],
+      "author": "X",
       "model": "x-ai/grok-3-mini-beta"
     },
     {
@@ -117,6 +122,7 @@
       "visibleTo": [
         "O"
       ],
+      "author": "O",
       "model": "anthropic/claude-3.7-sonnet"
     },
     {
@@ -133,6 +139,7 @@
       "visibleTo": [
         "X"
       ],
+      "author": "X",
       "model": "x-ai/grok-3-mini-beta"
     },
     {
@@ -149,6 +156,7 @@
       "visibleTo": [
         "O"
       ],
+      "author": "O",
       "model": "anthropic/claude-3.7-sonnet"
     },
     {
@@ -165,6 +173,7 @@
       "visibleTo": [
         "X"
       ],
+      "author": "X",
       "model": "x-ai/grok-3-mini-beta"
     }
   ],
