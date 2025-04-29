@@ -118,7 +118,9 @@ function calculateStats(matchFiles: string[]) {
 }
 
 // Get all match files
-const matchFiles = fs.readdirSync('matches').map(f => `matches/${f}`);
+const matchFiles = fs.readdirSync('matches')
+  .filter(f => f.endsWith('.json')) // Ensure we only process json files
+  .map(f => `matches/${f}`);
 const stats = calculateStats(matchFiles);
 
 console.log('Overall Statistics:');

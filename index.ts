@@ -2,7 +2,6 @@ import fs from "fs";
 import OpenAI from "openai";
 import type { ChatCompletion, ChatCompletionCreateParamsNonStreaming } from "openai/resources.mjs";
 import type { RequestOptions } from "openai/core.mjs";
-import _ from "lodash";
 import z from "zod";
 
 import { TicTacToe, type PLAYER, type POSITION } from "./tictactoe";
@@ -31,10 +30,24 @@ const generateMatchups = async (modelIds: Set<string>) => {
 }
 
 const getCompletedMatchups = () => {
-  return fs.readdirSync("./matches")
-    .filter((file) => file.endsWith(".json"))
-    .map((file) => file.split(".")?.[0]?.split("#").map((x) => x.trim()) as [string, string])
-    .map(([x, o]) => ({ X: x, O: o }));
+  const gamesPerMatchup: Record<string, number[]> = {};
+  const files = fs.readdirSync("./matches").filter((file) => file.endsWith(".json"));
+
+  for (const file of files) {
+    const parts = file.replace(".json", "").split("#");
+    if (parts.length === 3 && parts[0] && parts[1] && parts[2]) {
+      const [x, o, gameNumStr] = parts;
+      const gameNum = parseInt(gameNumStr);
+      if (!isNaN(gameNum)) {
+        const key = `${x}#${o}`;
+        if (!gamesPerMatchup[key]) {
+          gamesPerMatchup[key] = [];
+        }
+        gamesPerMatchup[key].push(gameNum);
+      }
+    }
+  }
+  return gamesPerMatchup;
 }
 
 type AugmentedChatMessage =
@@ -118,7 +131,7 @@ const gameStep = async (ticTacToe: TicTacToe, chat: AugmentedChatMessage[], turn
     content: `It's ${turn}'s turn. Open fields: ${ticTacToe.getOpenFields().join(", ")}. The current board is: ${ticTacToe.toString()}`,
     visibleTo: ['X', 'O'],
   });
-  
+
   const response = await retryChatCompletion({
     model: matchup[turn],
     messages: formatChatForPlayer(chat, turn),
@@ -126,9 +139,9 @@ const gameStep = async (ticTacToe: TicTacToe, chat: AugmentedChatMessage[], turn
 
   // some models reason but don't respond
   const message = ((response?.choices?.[0]?.message as { reasoning?: string })?.reasoning || '') + (response?.choices?.[0]?.message?.content || '');
-  if (message === null || message === undefined) 
+  if (message === null || message === undefined)
     throw new Error(`No response: ${JSON.stringify(response)}`);
-  
+
   chat.push({
     role: "assistant",
     content: message,
@@ -144,14 +157,28 @@ const gameStep = async (ticTacToe: TicTacToe, chat: AugmentedChatMessage[], turn
     .pop() as POSITION | undefined;
   if (move) {
     ticTacToe.take(move, turn);
+    chat.push({
+      role: "assistant",
+      content: `I took ${move}`,
+      visibleTo: ['X', 'O'],
+      author: turn,
+      model: matchup[turn],
+    });
   } else {
-    console.error(`No move for response, skipping turn: ${message}`);
+    chat.push({
+      role: "assistant",
+      content: `No field taken, either invalid or no response.`,
+      visibleTo: ['X', 'O'],
+      author: turn,
+      model: matchup[turn],
+    });
   }
-  console.log({ chat, move, winner: ticTacToe.getWinner(), board: ticTacToe.getBoard() });
+  console.debug({ turn, chat, move, winner: ticTacToe.getWinner(), board: ticTacToe.getBoard() })
+  console.log({ turn, move, winner: ticTacToe.getWinner(), board: ticTacToe.getBoard() });
 }
 
-const playMatchup = async (matchup: { X: string, O: string }) => {
-  console.log(`Playing ${matchup.X} vs ${matchup.O}`);
+const playMatchup = async (matchup: { X: string, O: string }, gameNumber: number) => {
+  console.log(`Playing ${matchup.X} vs ${matchup.O} (Game ${gameNumber})`);
   const ticTacToe = new TicTacToe();
   const chat: AugmentedChatMessage[] = [];
   let hadError: PLAYER | null = null;
@@ -188,30 +215,56 @@ const playMatchup = async (matchup: { X: string, O: string }) => {
       break;
     }
   }
-  fs.writeFileSync(`./matches/${modelNameToFileName(matchup.X)}#${modelNameToFileName(matchup.O)}.json`, JSON.stringify({
+  fs.writeFileSync(`./matches/${modelNameToFileName(matchup.X)}#${modelNameToFileName(matchup.O)}#${gameNumber}.json`, JSON.stringify({
     timestamp: new Date().toISOString(),
     chat,
     hadError,
     winner: ticTacToe.getWinner(),
     board: ticTacToe.getBoard(),
     matchup,
+    gameNumber,
   }, null, 2));
 }
 
 const main = async () => {
+  const gamesPerMatchupTarget = 2;
   const allMatchups = await generateMatchups(models);
   if (!fs.existsSync("./matches")) {
     fs.mkdirSync("./matches", { recursive: true });
   }
-  const completedMatchups = getCompletedMatchups();
-  const matchups = _.shuffle(allMatchups).filter((matchup) => !completedMatchups.some((completedMatchup) => 
-    completedMatchup.X === modelNameToFileName(matchup.X) && completedMatchup.O === modelNameToFileName(matchup.O)
-  ));
-  console.log({ matchups, completedMatchups });
+  const completedGames = getCompletedMatchups();
+  console.log(`Found ${Object.keys(completedGames).length} completed matchup keys.`);
 
-  for (const matchup of matchups) {
-    await playMatchup(matchup);
+  const matchupsToPlay: { matchup: { X: string, O: string }, gameNumber: number }[] = [];
+
+  for (const matchup of allMatchups) {
+    const xFileName = modelNameToFileName(matchup.X);
+    const oFileName = modelNameToFileName(matchup.O);
+    const matchupKey = `${xFileName}#${oFileName}`;
+    const completedGameNumbers = completedGames[matchupKey] || [];
+    const playedCount = completedGameNumbers.length;
+
+    console.log(`Matchup ${matchup.X} vs ${matchup.O}: ${playedCount}/${gamesPerMatchupTarget} games completed.`);
+
+    if (playedCount < gamesPerMatchupTarget) {
+      for (let gameNumber = 1; gameNumber <= gamesPerMatchupTarget; gameNumber++) {
+        if (!completedGameNumbers.includes(gameNumber)) {
+          matchupsToPlay.push({ matchup, gameNumber });
+        }
+      }
+    }
   }
+
+  console.log(`Need to play ${matchupsToPlay.length} more games.`);
+
+  // Optional: Shuffle or sort matchupsToPlay if desired
+  // matchupsToPlay.sort(() => Math.random() - 0.5); // Example shuffle
+
+  for (const { matchup, gameNumber } of matchupsToPlay) {
+    await playMatchup(matchup, gameNumber);
+  }
+
+  console.log("All required games played.");
 }
 
 if (require.main === module) {
