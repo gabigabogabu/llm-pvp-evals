@@ -28,6 +28,8 @@ interface ModelStats {
   errors: number;
   gamesAsX: number;
   gamesAsO: number;
+  drawsAsX: number;
+  drawsAsO: number;
   turnsToWin: number;
 }
 
@@ -38,6 +40,8 @@ function initModelStats(): ModelStats {
     winsAsX: 0,
     winsAsO: 0,
     errors: 0,
+    drawsAsX: 0,
+    drawsAsO: 0,
     gamesAsX: 0,
     gamesAsO: 0,
     turnsToWin: 0
@@ -59,6 +63,7 @@ function calculateStats(matchFiles: string[]) {
   let xWins = 0;
   let oWins = 0;
   let errors = 0;
+  let draws = 0;
   const modelStats: Record<string, ModelStats> = {};
 
   for (const file of matchFiles) {
@@ -75,6 +80,10 @@ function calculateStats(matchFiles: string[]) {
     } else if (analysis.hadError === 'O') {
       errors++
       modelStats[analysis.modelAsO]!.errors++
+    } else if (analysis.winner === null) {
+      draws++
+      modelStats[analysis.modelAsX]!.drawsAsX++
+      modelStats[analysis.modelAsO]!.drawsAsO++
     }
 
     modelStats[analysis.modelAsX]!.totalGames++;
@@ -102,6 +111,7 @@ function calculateStats(matchFiles: string[]) {
     xWinRate: xWins / totalMatches,
     oWinRate: oWins / totalMatches,
     errorRate: errors / totalMatches,
+    drawRate: draws / totalMatches,
     modelStats,
     totalMatches
   };
@@ -114,6 +124,7 @@ const stats = calculateStats(matchFiles);
 console.log('Overall Statistics:');
 console.log(`X Win Rate: ${(stats.xWinRate * 100).toFixed(2)}%`);
 console.log(`O Win Rate: ${(stats.oWinRate * 100).toFixed(2)}%`);
+console.log(`Draw Rate: ${(stats.drawRate * 100).toFixed(2)}%`);
 console.log(`Error Rate: ${(stats.errorRate * 100).toFixed(2)}%`);
 console.log('\nPer-Model Statistics (sorted by win rate with Laplace smoothing):');
 
@@ -130,6 +141,8 @@ for (const [model, modelStat] of sortedModels) {
   console.log(`  Overall Win Rate: ${((modelStat.wins / modelStat.totalGames) * 100).toFixed(2)}% (${modelStat.wins}/${modelStat.totalGames} games)`);
   console.log(`  Win Rate as X: ${modelStat.gamesAsX > 0 ? ((modelStat.winsAsX / modelStat.gamesAsX) * 100).toFixed(2) : 0}% (${modelStat.winsAsX}/${modelStat.gamesAsX} games)`);
   console.log(`  Win Rate as O: ${modelStat.gamesAsO > 0 ? ((modelStat.winsAsO / modelStat.gamesAsO) * 100).toFixed(2) : 0}% (${modelStat.winsAsO}/${modelStat.gamesAsO} games)`);
+  console.log(`  Draw Rate as X: ${modelStat.gamesAsX > 0 ? ((modelStat.drawsAsX / modelStat.gamesAsX) * 100).toFixed(2) : 0}% (${modelStat.drawsAsX}/${modelStat.gamesAsX} games)`);
+  console.log(`  Draw Rate as O: ${modelStat.gamesAsO > 0 ? ((modelStat.drawsAsO / modelStat.gamesAsO) * 100).toFixed(2) : 0}% (${modelStat.drawsAsO}/${modelStat.gamesAsO} games)`);
   console.log(`  Error Rate: ${((modelStat.errors / modelStat.totalGames) * 100).toFixed(2)}% (${modelStat.errors}/${modelStat.totalGames} games)`);
   console.log(`  Average Turns to Win: ${modelStat.wins > 0 ? (modelStat.turnsToWin / modelStat.wins).toFixed(2) : 'N/A'}`);
 }
