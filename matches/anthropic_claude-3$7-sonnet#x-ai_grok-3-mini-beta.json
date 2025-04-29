@@ -126,6 +126,7 @@
       "model": "x-ai/grok-3-mini-beta"
     }
   ],
+  "hadError": null,
   "winner": "O",
   "matchup": {
     "X": "anthropic/claude-3.7-sonnet",

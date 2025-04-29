@@ -177,6 +177,7 @@
       "model": "x-ai/grok-3-mini-beta"
     }
   ],
+  "hadError": null,
   "winner": "X",
   "matchup": {
     "X": "x-ai/grok-3-mini-beta",
