@@ -117,34 +117,47 @@ function calculateStats(matchFiles: string[]) {
   };
 }
 
+function generateMarkdown(stats: ReturnType<typeof calculateStats>): string {
+  let markdown = '# Tic Tac Toe Model Evaluation Results\n\n';
+  
+  markdown += '## Overall Statistics\n\n';
+  markdown += `- X Win Rate: ${(stats.xWinRate * 100).toFixed(2)}%\n`;
+  markdown += `- O Win Rate: ${(stats.oWinRate * 100).toFixed(2)}%\n`;
+  markdown += `- Draw Rate: ${(stats.drawRate * 100).toFixed(2)}%\n`;
+  markdown += `- Error Rate: ${(stats.errorRate * 100).toFixed(2)}%\n\n`;
+  
+  markdown += '## Per-Model Statistics\n';
+  markdown += '*(sorted by win rate with Laplace smoothing)*\n\n';
+
+  // Sort models by win rate using Laplace smoothing (add one win and one loss)
+  const sortedModels = Object.entries(stats.modelStats)
+    .sort(([, a], [, b]) => {
+      const aSmoothedRate = (a.wins + 1) / (a.totalGames + 2);
+      const bSmoothedRate = (b.wins + 1) / (b.totalGames + 2);
+      return bSmoothedRate - aSmoothedRate;
+    });
+
+  for (const [model, modelStat] of sortedModels) {
+    markdown += `### ${model}\n\n`;
+    markdown += `- Overall Win Rate: ${((modelStat.wins / modelStat.totalGames) * 100).toFixed(2)}% (${modelStat.wins}/${modelStat.totalGames} games)\n`;
+    markdown += `- Win Rate as X: ${modelStat.gamesAsX > 0 ? ((modelStat.winsAsX / modelStat.gamesAsX) * 100).toFixed(2) : 0}% (${modelStat.winsAsX}/${modelStat.gamesAsX} games)\n`;
+    markdown += `- Win Rate as O: ${modelStat.gamesAsO > 0 ? ((modelStat.winsAsO / modelStat.gamesAsO) * 100).toFixed(2) : 0}% (${modelStat.winsAsO}/${modelStat.gamesAsO} games)\n`;
+    markdown += `- Draw Rate as X: ${modelStat.gamesAsX > 0 ? ((modelStat.drawsAsX / modelStat.gamesAsX) * 100).toFixed(2) : 0}% (${modelStat.drawsAsX}/${modelStat.gamesAsX} games)\n`;
+    markdown += `- Draw Rate as O: ${modelStat.gamesAsO > 0 ? ((modelStat.drawsAsO / modelStat.gamesAsO) * 100).toFixed(2) : 0}% (${modelStat.drawsAsO}/${modelStat.gamesAsO} games)\n`;
+    markdown += `- Error Rate: ${((modelStat.errors / modelStat.totalGames) * 100).toFixed(2)}% (${modelStat.errors}/${modelStat.totalGames} games)\n`;
+    markdown += `- Average Turns to Win: ${modelStat.wins > 0 ? (modelStat.turnsToWin / modelStat.wins).toFixed(2) : 'N/A'}\n\n`;
+  }
+
+  return markdown;
+}
+
 // Get all match files
 const matchFiles = fs.readdirSync('matches')
   .filter(f => f.endsWith('.json')) // Ensure we only process json files
   .map(f => `matches/${f}`);
 const stats = calculateStats(matchFiles);
 
-console.log('Overall Statistics:');
-console.log(`X Win Rate: ${(stats.xWinRate * 100).toFixed(2)}%`);
-console.log(`O Win Rate: ${(stats.oWinRate * 100).toFixed(2)}%`);
-console.log(`Draw Rate: ${(stats.drawRate * 100).toFixed(2)}%`);
-console.log(`Error Rate: ${(stats.errorRate * 100).toFixed(2)}%`);
-console.log('\nPer-Model Statistics (sorted by win rate with Laplace smoothing):');
-
-// Sort models by win rate using Laplace smoothing (add one win and one loss)
-const sortedModels = Object.entries(stats.modelStats)
-  .sort(([, a], [, b]) => {
-    const aSmoothedRate = (a.wins + 1) / (a.totalGames + 2);
-    const bSmoothedRate = (b.wins + 1) / (b.totalGames + 2);
-    return bSmoothedRate - aSmoothedRate;
-  });
-
-for (const [model, modelStat] of sortedModels) {
-  console.log(`\n${model}:`);
-  console.log(`  Overall Win Rate: ${((modelStat.wins / modelStat.totalGames) * 100).toFixed(2)}% (${modelStat.wins}/${modelStat.totalGames} games)`);
-  console.log(`  Win Rate as X: ${modelStat.gamesAsX > 0 ? ((modelStat.winsAsX / modelStat.gamesAsX) * 100).toFixed(2) : 0}% (${modelStat.winsAsX}/${modelStat.gamesAsX} games)`);
-  console.log(`  Win Rate as O: ${modelStat.gamesAsO > 0 ? ((modelStat.winsAsO / modelStat.gamesAsO) * 100).toFixed(2) : 0}% (${modelStat.winsAsO}/${modelStat.gamesAsO} games)`);
-  console.log(`  Draw Rate as X: ${modelStat.gamesAsX > 0 ? ((modelStat.drawsAsX / modelStat.gamesAsX) * 100).toFixed(2) : 0}% (${modelStat.drawsAsX}/${modelStat.gamesAsX} games)`);
-  console.log(`  Draw Rate as O: ${modelStat.gamesAsO > 0 ? ((modelStat.drawsAsO / modelStat.gamesAsO) * 100).toFixed(2) : 0}% (${modelStat.drawsAsO}/${modelStat.gamesAsO} games)`);
-  console.log(`  Error Rate: ${((modelStat.errors / modelStat.totalGames) * 100).toFixed(2)}% (${modelStat.errors}/${modelStat.totalGames} games)`);
-  console.log(`  Average Turns to Win: ${modelStat.wins > 0 ? (modelStat.turnsToWin / modelStat.wins).toFixed(2) : 'N/A'}`);
-}
+// Generate markdown and write to file
+const markdown = generateMarkdown(stats);
+fs.writeFileSync('eval.md', markdown);
+console.log('Evaluation results written to evaluation.md');
