@@ -1,0 +1,197 @@
+{
+  "timestamp": "2025-04-29T15:48:56.307Z",
+  "chat": [
+    {
+      "role": "developer",
+      "content": "You are playing Tic Tac Toe. You play by responding with the field you want to take. The last field you mention will be taken as your move. The fields are: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT.",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "developer",
+      "content": "You are X. Your opponent is O.",
+      "visibleTo": [
+        "X"
+      ]
+    },
+    {
+      "role": "developer",
+      "content": "You are O. Your opponent is X.",
+      "visibleTo": [
+        "O"
+      ]
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT> </TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER> </MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "Since it's the first move and all fields are open, I'll choose the MIDDLE_CENTER as it's a strategic position that gives me the most opportunities to create winning lines. \n\nMIDDLE_CENTER",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "deepseek/deepseek-chat-v3-0324:free",
+      "author": "X"
+    },
+    {
+      "role": "developer",
+      "content": "It's O's turn. Open fields: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT> </TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I will take the MIDDLE_LEFT field.",
+      "visibleTo": [
+        "O"
+      ],
+      "model": "openai/gpt-4o-mini",
+      "author": "O"
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT> </TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT>O</MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "```\n<tic-tac-toe>\n  <TOP_LEFT>X</TOP_LEFT>\n  <TOP_CENTER></TOP_CENTER>\n  <TOP_RIGHT></TOP_RIGHT>\n  <MIDDLE_LEFT>O</MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT></MIDDLE_RIGHT>\n  <BOTTOM_LEFT></BOTTOM_LEFT>\n  <BOTTOM_CENTER></BOTTOM_CENTER>\n  <BOTTOM_RIGHT></BOTTOM_RIGHT>\n</tic-tac-toe>\n```",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "deepseek/deepseek-chat-v3-0324:free",
+      "author": "X"
+    },
+    {
+      "role": "developer",
+      "content": "It's O's turn. Open fields: TOP_CENTER, TOP_RIGHT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT>X</TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT>O</MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I will take the TOP_CENTER field.",
+      "visibleTo": [
+        "O"
+      ],
+      "model": "openai/gpt-4o-mini",
+      "author": "O"
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: TOP_RIGHT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT>X</TOP_LEFT>\n  <TOP_CENTER>O</TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT>O</MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "Based on the current board, I notice that O has a potential winning move if they take MIDDLE_RIGHT (completing the middle row: O, X, O). To block this, I should take MIDDLE_RIGHT. \n\nMIDDLE_RIGHT",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "deepseek/deepseek-chat-v3-0324:free",
+      "author": "X"
+    },
+    {
+      "role": "developer",
+      "content": "It's O's turn. Open fields: TOP_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT>X</TOP_LEFT>\n  <TOP_CENTER>O</TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT>O</MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT>X</MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I will take the BOTTOM_LEFT field.",
+      "visibleTo": [
+        "O"
+      ],
+      "model": "openai/gpt-4o-mini",
+      "author": "O"
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: TOP_RIGHT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT>X</TOP_LEFT>\n  <TOP_CENTER>O</TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT>O</MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT>X</MIDDLE_RIGHT>\n  <BOTTOM_LEFT>O</BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "> MIDDLE_RIGHT\n<tic-tac-toe>\n  <TOP_LEFT>X</TOP_LEFT>\n  <TOP_CENTER>O</TOP_CENTER>\n  <TOP_RIGHT></TOP_RIGHT>\n  <MIDDLE_LEFT>O</MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT>X</MIDDLE_RIGHT>\n  <BOTTOM_LEFT>O</BOTTOM_LEFT>\n  <BOTTOM_CENTER></BOTTOM_CENTER>\n  <BOTTOM_RIGHT></BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "deepseek/deepseek-chat-v3-0324:free",
+      "author": "X"
+    },
+    {
+      "role": "developer",
+      "content": "It's O's turn. Open fields: BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT>X</TOP_LEFT>\n  <TOP_CENTER>O</TOP_CENTER>\n  <TOP_RIGHT>X</TOP_RIGHT>\n  <MIDDLE_LEFT>O</MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT>X</MIDDLE_RIGHT>\n  <BOTTOM_LEFT>O</BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I will take the BOTTOM_CENTER field.",
+      "visibleTo": [
+        "O"
+      ],
+      "model": "openai/gpt-4o-mini",
+      "author": "O"
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT>X</TOP_LEFT>\n  <TOP_CENTER>O</TOP_CENTER>\n  <TOP_RIGHT>X</TOP_RIGHT>\n  <MIDDLE_LEFT>O</MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT>X</MIDDLE_RIGHT>\n  <BOTTOM_LEFT>O</BOTTOM_LEFT>\n  <BOTTOM_CENTER>O</BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "Based on the current board, I notice that O has a potential winning move if they take BOTTOM_CENTER (completing the bottom row: O, O, O). To block this, I should take BOTTOM_CENTER.\n\nBOTTOM_CENTER```\n<tic-tac-toe>\n  <TOP_LEFT>X</TOP_LEFT>\n  <TOP_CENTER>O</TOP_CENTER>\n  <TOP_RIGHT></TOP_RIGHT>\n  <MIDDLE_LEFT>O</MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT>X</MIDDLE_RIGHT>\n  <BOTTOM_LEFT>O</BOTTOM_LEFT>\n  <BOTTOM_CENTER>X</BOTTOM_CENTER>\n  <BOTTOM_RIGHT></BOTTOM_RIGHT>\n</tic-tac-toe>\n```",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "deepseek/deepseek-chat-v3-0324:free",
+      "author": "X"
+    }
+  ],
+  "hadError": null,
+  "winner": "X",
+  "board": {
+    "TOP_LEFT": "X",
+    "TOP_CENTER": "O",
+    "TOP_RIGHT": "X",
+    "MIDDLE_LEFT": "O",
+    "MIDDLE_CENTER": "X",
+    "MIDDLE_RIGHT": "X",
+    "BOTTOM_LEFT": "O",
+    "BOTTOM_CENTER": "O",
+    "BOTTOM_RIGHT": "X"
+  },
+  "matchup": {
+    "X": "deepseek/deepseek-chat-v3-0324:free",
+    "O": "openai/gpt-4o-mini"
+  }
+}

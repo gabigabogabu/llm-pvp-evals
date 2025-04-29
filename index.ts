@@ -6,6 +6,7 @@ import _ from "lodash";
 import z from "zod";
 
 import { TicTacToe, type PLAYER, type POSITION } from "./tictactoe";
+import { models } from "./models";
 
 const env = z.object({
   OPENROUTER_API_KEY: z.string(),
@@ -15,61 +16,6 @@ const openai = new OpenAI({
   baseURL: 'https://openrouter.ai/api/v1',
   apiKey: env.OPENROUTER_API_KEY,
 });
-
-// const listTextModelIds = async () => {
-//   const response = await openai.models.list();
-//   return response.data.filter((model: any) =>
-//     model.architecture.input_modalities.includes('text') &&
-//     model.architecture.output_modalities.includes('text')
-//   ).map((model) => model.id);
-// };
-const listFreeTextModelIds = async (): Promise<Set<string>> => {
-  // tngtech/deepseek-r1t-chimera:free
-  const response = await openai.models.list();
-  return new Set(response.data
-    .filter((model: any) => model.id.endsWith(":free"))
-    .filter((model: any) =>
-      model.architecture.input_modalities.includes('text') &&
-      model.architecture.output_modalities.includes('text')
-    )
-    .map((model) => model.id)
-  );
-};
-
-// manually from https://openrouter.ai/models?order=top-weekly
-const listTopTenWeeklyModels = (): Set<string> => new Set([
-    'anthropic/claude-3.7-sonnet',
-    'google/gemini-2.0-flash-001',
-    'google/gemini-2.5-flash-preview',
-    'deepseek/deepseek-chat-v3-0324:free',
-    'google/gemini-2.5-pro-preview-03-25',
-    'meta-llama/llama-3.3-70b-instruct',
-    'deepseek/deepseek-chat-v3-0324',
-    'deepseek/deepseek-r1:free',
-    'anthropic/claude-3.7-sonnet:thinking',
-    'google/gemini-2.5-pro-exp-03-25',
-  ]);
-
-// personal interest not otherwise in the list
-const listInterestingModelIds = (): Set<string> => new Set([
-    'x-ai/grok-3-beta',
-    'x-ai/grok-3-mini-beta',
-    'anthropic/claude-3.5-haiku',
-    'anthropic/claude-3.5-sonnet',
-    'openai/gpt-4.1',
-    'deepseek/deepseek-r1:free',
-    'google/gemini-2.5-pro-exp-03-25',
-    'google/gemini-2.0-flash-exp:free',
-    'meta-llama/llama-4-maverick:free'
-  ]);
-
-const listAllModelIds = async (): Promise<Set<string>> => {
-  return new Set([
-    ...listTopTenWeeklyModels(), 
-    ...listInterestingModelIds(),
-    // ...await listFreeTextModelIds(),
-  ]);
-}
 
 const generateMatchups = async (modelIds: Set<string>) => {
   const matchups = [];
@@ -253,8 +199,7 @@ const playMatchup = async (matchup: { X: string, O: string }) => {
 }
 
 const main = async () => {
-  const modelIds = await listAllModelIds();
-  const allMatchups = await generateMatchups(modelIds);
+  const allMatchups = await generateMatchups(models);
   if (!fs.existsSync("./matches")) {
     fs.mkdirSync("./matches", { recursive: true });
   }
