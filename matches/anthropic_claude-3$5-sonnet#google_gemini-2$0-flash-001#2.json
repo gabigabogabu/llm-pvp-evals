@@ -1,0 +1,288 @@
+{
+  "timestamp": "2025-04-29T17:24:58.730Z",
+  "chat": [
+    {
+      "role": "developer",
+      "content": "You are playing Tic Tac Toe. You play by responding with the field you want to take. The last field you mention will be taken as your move. The fields are: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT.",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "developer",
+      "content": "You are X. Your opponent is O.",
+      "visibleTo": [
+        "X"
+      ]
+    },
+    {
+      "role": "developer",
+      "content": "You are O. Your opponent is X.",
+      "visibleTo": [
+        "O"
+      ]
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT> </TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER> </MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I'll take the MIDDLE_CENTER position as it's the most strategically advantageous starting position in Tic Tac Toe.\n\nMIDDLE_CENTER",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "anthropic/claude-3.5-sonnet",
+      "author": "X"
+    },
+    {
+      "role": "assistant",
+      "content": "I took MIDDLE_CENTER",
+      "visibleTo": [
+        "X",
+        "O"
+      ],
+      "author": "X",
+      "model": "anthropic/claude-3.5-sonnet"
+    },
+    {
+      "role": "developer",
+      "content": "It's O's turn. Open fields: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT> </TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "Okay, I will play TOP_LEFT.\n",
+      "visibleTo": [
+        "O"
+      ],
+      "model": "google/gemini-2.0-flash-001",
+      "author": "O"
+    },
+    {
+      "role": "assistant",
+      "content": "I took TOP_LEFT",
+      "visibleTo": [
+        "X",
+        "O"
+      ],
+      "author": "O",
+      "model": "google/gemini-2.0-flash-001"
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I see my opponent took TOP_LEFT. To counter this, I'll take BOTTOM_RIGHT to start setting up potential winning diagonals.\n\nBOTTOM_RIGHT",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "anthropic/claude-3.5-sonnet",
+      "author": "X"
+    },
+    {
+      "role": "assistant",
+      "content": "I took BOTTOM_RIGHT",
+      "visibleTo": [
+        "X",
+        "O"
+      ],
+      "author": "X",
+      "model": "anthropic/claude-3.5-sonnet"
+    },
+    {
+      "role": "developer",
+      "content": "It's O's turn. Open fields: TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT>X</BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "TOP_CENTER seems like the best move.\n",
+      "visibleTo": [
+        "O"
+      ],
+      "model": "google/gemini-2.0-flash-001",
+      "author": "O"
+    },
+    {
+      "role": "assistant",
+      "content": "I took TOP_CENTER",
+      "visibleTo": [
+        "X",
+        "O"
+      ],
+      "author": "O",
+      "model": "google/gemini-2.0-flash-001"
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: TOP_RIGHT, MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER>O</TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT>X</BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I notice my opponent is trying to create a line across the top. I need to block TOP_RIGHT or they could win on their next turn.\n\nTOP_RIGHT\nI took TOP_RIGHT",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "anthropic/claude-3.5-sonnet",
+      "author": "X"
+    },
+    {
+      "role": "assistant",
+      "content": "I took TOP_RIGHT",
+      "visibleTo": [
+        "X",
+        "O"
+      ],
+      "author": "X",
+      "model": "anthropic/claude-3.5-sonnet"
+    },
+    {
+      "role": "developer",
+      "content": "It's O's turn. Open fields: MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER>O</TOP_CENTER>\n  <TOP_RIGHT>X</TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT>X</BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "Since I cannot win and you cannot win, I will pick a random open spot.\nI will take MIDDLE_RIGHT.\nI took MIDDLE_RIGHT",
+      "visibleTo": [
+        "O"
+      ],
+      "model": "google/gemini-2.0-flash-001",
+      "author": "O"
+    },
+    {
+      "role": "assistant",
+      "content": "I took MIDDLE_RIGHT",
+      "visibleTo": [
+        "X",
+        "O"
+      ],
+      "author": "O",
+      "model": "google/gemini-2.0-flash-001"
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: MIDDLE_LEFT, BOTTOM_LEFT, BOTTOM_CENTER. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER>O</TOP_CENTER>\n  <TOP_RIGHT>X</TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT>O</MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT>X</BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I need to block my opponent from creating potential winning lines while trying to create my own winning opportunities. I'll take MIDDLE_LEFT, which both blocks a potential win and maintains my chances.\n\nMIDDLE_LEFT\nI took MIDDLE_LEFT",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "anthropic/claude-3.5-sonnet",
+      "author": "X"
+    },
+    {
+      "role": "assistant",
+      "content": "I took MIDDLE_LEFT",
+      "visibleTo": [
+        "X",
+        "O"
+      ],
+      "author": "X",
+      "model": "anthropic/claude-3.5-sonnet"
+    },
+    {
+      "role": "developer",
+      "content": "It's O's turn. Open fields: BOTTOM_LEFT, BOTTOM_CENTER. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER>O</TOP_CENTER>\n  <TOP_RIGHT>X</TOP_RIGHT>\n  <MIDDLE_LEFT>X</MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT>O</MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT>X</BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I will take BOTTOM_LEFT.\nI took BOTTOM_LEFT",
+      "visibleTo": [
+        "O"
+      ],
+      "model": "google/gemini-2.0-flash-001",
+      "author": "O"
+    },
+    {
+      "role": "assistant",
+      "content": "I took BOTTOM_LEFT",
+      "visibleTo": [
+        "X",
+        "O"
+      ],
+      "author": "O",
+      "model": "google/gemini-2.0-flash-001"
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: BOTTOM_CENTER. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER>O</TOP_CENTER>\n  <TOP_RIGHT>X</TOP_RIGHT>\n  <MIDDLE_LEFT>X</MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT>O</MIDDLE_RIGHT>\n  <BOTTOM_LEFT>O</BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT>X</BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "O has taken BOTTOM_LEFT. At this point, I have to take BOTTOM_CENTER to complete my move - this is actually the final empty space on the board.\n\nBOTTOM_CENTER\nI took BOTTOM_CENTER\n\nThe game is now complete. Looking at the final board, the game ended in a draw (cat's game) as neither player managed to get three in a row.",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "anthropic/claude-3.5-sonnet",
+      "author": "X"
+    },
+    {
+      "role": "assistant",
+      "content": "I took BOTTOM_CENTER",
+      "visibleTo": [
+        "X",
+        "O"
+      ],
+      "author": "X",
+      "model": "anthropic/claude-3.5-sonnet"
+    }
+  ],
+  "hadError": null,
+  "winner": null,
+  "board": {
+    "TOP_LEFT": "O",
+    "TOP_CENTER": "O",
+    "TOP_RIGHT": "X",
+    "MIDDLE_LEFT": "X",
+    "MIDDLE_CENTER": "X",
+    "MIDDLE_RIGHT": "O",
+    "BOTTOM_LEFT": "O",
+    "BOTTOM_CENTER": "X",
+    "BOTTOM_RIGHT": "X"
+  },
+  "matchup": {
+    "X": "anthropic/claude-3.5-sonnet",
+    "O": "google/gemini-2.0-flash-001"
+  },
+  "gameNumber": 2
+}

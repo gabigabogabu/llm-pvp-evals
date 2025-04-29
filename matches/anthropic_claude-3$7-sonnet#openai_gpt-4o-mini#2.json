@@ -1,0 +1,288 @@
+{
+  "timestamp": "2025-04-29T18:28:09.124Z",
+  "chat": [
+    {
+      "role": "developer",
+      "content": "You are playing Tic Tac Toe. You play by responding with the field you want to take. The last field you mention will be taken as your move. The fields are: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT.",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "developer",
+      "content": "You are X. Your opponent is O.",
+      "visibleTo": [
+        "X"
+      ]
+    },
+    {
+      "role": "developer",
+      "content": "You are O. Your opponent is X.",
+      "visibleTo": [
+        "O"
+      ]
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT> </TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER> </MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I'll make my move. For Tic Tac Toe, I think it's best to start with the center position as it gives the most strategic options. Therefore, I choose MIDDLE_CENTER.",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "anthropic/claude-3.7-sonnet",
+      "author": "X"
+    },
+    {
+      "role": "assistant",
+      "content": "I took MIDDLE_CENTER",
+      "visibleTo": [
+        "X",
+        "O"
+      ],
+      "author": "X",
+      "model": "anthropic/claude-3.7-sonnet"
+    },
+    {
+      "role": "developer",
+      "content": "It's O's turn. Open fields: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT> </TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I will take TOP_LEFT. \n\nThe current board is: \n<tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "O"
+      ],
+      "model": "openai/gpt-4o-mini",
+      "author": "O"
+    },
+    {
+      "role": "assistant",
+      "content": "I took TOP_LEFT",
+      "visibleTo": [
+        "X",
+        "O"
+      ],
+      "author": "O",
+      "model": "openai/gpt-4o-mini"
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I see that you (as O) have taken TOP_LEFT.\n\nLooking at the current board:\n- I (as X) previously took MIDDLE_CENTER\n- You (as O) just took TOP_LEFT\n- Now it's my turn again\n\nI'll take BOTTOM_RIGHT to set up a potential diagonal win.",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "anthropic/claude-3.7-sonnet",
+      "author": "X"
+    },
+    {
+      "role": "assistant",
+      "content": "I took BOTTOM_RIGHT",
+      "visibleTo": [
+        "X",
+        "O"
+      ],
+      "author": "X",
+      "model": "anthropic/claude-3.7-sonnet"
+    },
+    {
+      "role": "developer",
+      "content": "It's O's turn. Open fields: TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT>X</BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I will take BOTTOM_LEFT. \n\nThe current board is: \n<tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT>O</BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT>X</BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "O"
+      ],
+      "model": "openai/gpt-4o-mini",
+      "author": "O"
+    },
+    {
+      "role": "assistant",
+      "content": "I took BOTTOM_LEFT",
+      "visibleTo": [
+        "X",
+        "O"
+      ],
+      "author": "O",
+      "model": "openai/gpt-4o-mini"
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_CENTER. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT>O</BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT>X</BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I see that you (as O) have taken BOTTOM_LEFT.\n\nLooking at the current board:\n- I (as X) have MIDDLE_CENTER and BOTTOM_RIGHT\n- You (as O) have TOP_LEFT and BOTTOM_LEFT\n- I notice you're setting up a potential win along the left column\n\nI'll block your strategy by taking MIDDLE_LEFT to prevent you from completing the left column.\nI took MIDDLE_LEFT",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "anthropic/claude-3.7-sonnet",
+      "author": "X"
+    },
+    {
+      "role": "assistant",
+      "content": "I took MIDDLE_LEFT",
+      "visibleTo": [
+        "X",
+        "O"
+      ],
+      "author": "X",
+      "model": "anthropic/claude-3.7-sonnet"
+    },
+    {
+      "role": "developer",
+      "content": "It's O's turn. Open fields: TOP_CENTER, TOP_RIGHT, MIDDLE_RIGHT, BOTTOM_CENTER. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT>X</MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT>O</BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT>X</BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I will take MIDDLE_RIGHT. \n\nThe current board is: \n<tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT>X</MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT>O</MIDDLE_RIGHT>\n  <BOTTOM_LEFT>O</BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT>X</BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "O"
+      ],
+      "model": "openai/gpt-4o-mini",
+      "author": "O"
+    },
+    {
+      "role": "assistant",
+      "content": "I took MIDDLE_RIGHT",
+      "visibleTo": [
+        "X",
+        "O"
+      ],
+      "author": "O",
+      "model": "openai/gpt-4o-mini"
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: TOP_CENTER, TOP_RIGHT, BOTTOM_CENTER. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT>X</MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT>O</MIDDLE_RIGHT>\n  <BOTTOM_LEFT>O</BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT>X</BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I see that you (as O) have taken MIDDLE_RIGHT.\n\nLooking at the current board:\n- I (as X) have MIDDLE_CENTER, BOTTOM_RIGHT, and MIDDLE_LEFT\n- You (as O) have TOP_LEFT, BOTTOM_LEFT, and MIDDLE_RIGHT\n- The game is getting tight!\n\nI'll take TOP_RIGHT to set up a potential diagonal win (MIDDLE_CENTER to TOP_RIGHT and BOTTOM_RIGHT).\nI took TOP_RIGHT",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "anthropic/claude-3.7-sonnet",
+      "author": "X"
+    },
+    {
+      "role": "assistant",
+      "content": "I took TOP_RIGHT",
+      "visibleTo": [
+        "X",
+        "O"
+      ],
+      "author": "X",
+      "model": "anthropic/claude-3.7-sonnet"
+    },
+    {
+      "role": "developer",
+      "content": "It's O's turn. Open fields: TOP_CENTER, BOTTOM_CENTER. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT>X</TOP_RIGHT>\n  <MIDDLE_LEFT>X</MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT>O</MIDDLE_RIGHT>\n  <BOTTOM_LEFT>O</BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT>X</BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I will take BOTTOM_CENTER.\n\nThe current board is:\n<tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT>X</TOP_RIGHT>\n  <MIDDLE_LEFT>X</MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT>O</MIDDLE_RIGHT>\n  <BOTTOM_LEFT>O</BOTTOM_LEFT>\n  <BOTTOM_CENTER>O</BOTTOM_CENTER>\n  <BOTTOM_RIGHT>X</BOTTOM_RIGHT>\n</tic-tac-toe>\n\nI have won!",
+      "visibleTo": [
+        "O"
+      ],
+      "model": "openai/gpt-4o-mini",
+      "author": "O"
+    },
+    {
+      "role": "assistant",
+      "content": "I took BOTTOM_CENTER",
+      "visibleTo": [
+        "X",
+        "O"
+      ],
+      "author": "O",
+      "model": "openai/gpt-4o-mini"
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: TOP_CENTER. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT>X</TOP_RIGHT>\n  <MIDDLE_LEFT>X</MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT>O</MIDDLE_RIGHT>\n  <BOTTOM_LEFT>O</BOTTOM_LEFT>\n  <BOTTOM_CENTER>O</BOTTOM_CENTER>\n  <BOTTOM_RIGHT>X</BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I see that you (as O) have taken BOTTOM_CENTER.\n\nLooking at the current board:\n- I (as X) have MIDDLE_CENTER, BOTTOM_RIGHT, MIDDLE_LEFT, and TOP_RIGHT\n- You (as O) have TOP_LEFT, BOTTOM_LEFT, MIDDLE_RIGHT, and BOTTOM_CENTER\n- There's only one space left: TOP_CENTER\n\nI'll take the final remaining position at TOP_CENTER.\nI took TOP_CENTER\n\nThe game has ended in a draw as all positions are filled and neither of us has three in a row.\n\nThis was a well-played game of Tic Tac Toe! Thank you for playing.",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "anthropic/claude-3.7-sonnet",
+      "author": "X"
+    },
+    {
+      "role": "assistant",
+      "content": "I took TOP_CENTER",
+      "visibleTo": [
+        "X",
+        "O"
+      ],
+      "author": "X",
+      "model": "anthropic/claude-3.7-sonnet"
+    }
+  ],
+  "hadError": null,
+  "winner": null,
+  "board": {
+    "TOP_LEFT": "O",
+    "TOP_CENTER": "X",
+    "TOP_RIGHT": "X",
+    "MIDDLE_LEFT": "X",
+    "MIDDLE_CENTER": "X",
+    "MIDDLE_RIGHT": "O",
+    "BOTTOM_LEFT": "O",
+    "BOTTOM_CENTER": "O",
+    "BOTTOM_RIGHT": "X"
+  },
+  "matchup": {
+    "X": "anthropic/claude-3.7-sonnet",
+    "O": "openai/gpt-4o-mini"
+  },
+  "gameNumber": 2
+}
