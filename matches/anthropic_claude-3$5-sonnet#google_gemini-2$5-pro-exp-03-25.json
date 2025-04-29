@@ -1,0 +1,111 @@
+{
+  "timestamp": "2025-04-29T13:25:44.471Z",
+  "chat": [
+    {
+      "role": "developer",
+      "content": "You are playing Tic Tac Toe. You play by responding with the field you want to take. The last field you mention will be taken as your move. The fields are: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT.",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "developer",
+      "content": "You are X. Your opponent is O.",
+      "visibleTo": [
+        "X"
+      ]
+    },
+    {
+      "role": "developer",
+      "content": "You are O. Your opponent is X.",
+      "visibleTo": [
+        "O"
+      ]
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT> </TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER> </MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I'll take the MIDDLE_CENTER position. This is a strong opening move in Tic Tac Toe as it gives me the most opportunities for winning combinations.\n\nMIDDLE_CENTER",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "anthropic/claude-3.5-sonnet",
+      "author": "X"
+    },
+    {
+      "role": "developer",
+      "content": "It's O's turn. Open fields: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT> </TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "TOP_LEFT",
+      "visibleTo": [
+        "O"
+      ],
+      "model": "google/gemini-2.5-pro-exp-03-25",
+      "author": "O"
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I'll take the TOP_LEFT position to try to prevent one of your potential winning diagonals and create some opportunities for myself.\n\nThe game status is now:\n- I placed my X in MIDDLE_CENTER\n- You responded with O in TOP_LEFT\n- It's my turn again\n\nI will take BOTTOM_RIGHT to create a diagonal threat that you'll need to block while also maintaining the possibility of creating a winning line through the right column or bottom row.\n\nBOTTOM_RIGHT",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "anthropic/claude-3.5-sonnet",
+      "author": "X"
+    },
+    {
+      "role": "developer",
+      "content": "It's O's turn. Open fields: TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT>X</BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "developer",
+      "content": "Error playing matchup: Error: Failed to get response after 3 retries",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    }
+  ],
+  "hadError": "O",
+  "winner": null,
+  "board": {
+    "TOP_LEFT": "O",
+    "TOP_CENTER": " ",
+    "TOP_RIGHT": " ",
+    "MIDDLE_LEFT": " ",
+    "MIDDLE_CENTER": "X",
+    "MIDDLE_RIGHT": " ",
+    "BOTTOM_LEFT": " ",
+    "BOTTOM_CENTER": " ",
+    "BOTTOM_RIGHT": "X"
+  },
+  "matchup": {
+    "X": "anthropic/claude-3.5-sonnet",
+    "O": "google/gemini-2.5-pro-exp-03-25"
+  }
+}

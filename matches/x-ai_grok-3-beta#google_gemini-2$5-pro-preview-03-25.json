@@ -1,0 +1,180 @@
+{
+  "timestamp": "2025-04-29T13:26:26.191Z",
+  "chat": [
+    {
+      "role": "developer",
+      "content": "You are playing Tic Tac Toe. You play by responding with the field you want to take. The last field you mention will be taken as your move. The fields are: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT.",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "developer",
+      "content": "You are X. Your opponent is O.",
+      "visibleTo": [
+        "X"
+      ]
+    },
+    {
+      "role": "developer",
+      "content": "You are O. Your opponent is X.",
+      "visibleTo": [
+        "O"
+      ]
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT> </TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER> </MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I choose MIDDLE_CENTER.",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "x-ai/grok-3-beta",
+      "author": "X"
+    },
+    {
+      "role": "developer",
+      "content": "It's O's turn. Open fields: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT> </TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "Okay, I will take TOP_LEFT.",
+      "visibleTo": [
+        "O"
+      ],
+      "model": "google/gemini-2.5-pro-preview-03-25",
+      "author": "O"
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I choose TOP_RIGHT.",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "x-ai/grok-3-beta",
+      "author": "X"
+    },
+    {
+      "role": "developer",
+      "content": "It's O's turn. Open fields: TOP_CENTER, MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT>X</TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "Okay, I need to make a move. Looking at the board:\n```\nO |   | X\n--|---|--\n  | X |\n--|---|--\n  |   |\n```\nX has pieces in MIDDLE_CENTER and TOP_RIGHT. If X plays BOTTOM_LEFT next, X wins along the diagonal. I must block that.\n\nI will take BOTTOM_LEFT.",
+      "visibleTo": [
+        "O"
+      ],
+      "model": "google/gemini-2.5-pro-preview-03-25",
+      "author": "O"
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: TOP_CENTER, MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT>X</TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT>O</BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I choose BOTTOM_RIGHT.",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "x-ai/grok-3-beta",
+      "author": "X"
+    },
+    {
+      "role": "developer",
+      "content": "It's O's turn. Open fields: TOP_CENTER, MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_CENTER. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT>X</TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT>O</BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT>X</BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "Okay, I will take TOP_CENTER.",
+      "visibleTo": [
+        "O"
+      ],
+      "model": "google/gemini-2.5-pro-preview-03-25",
+      "author": "O"
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_CENTER. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER>O</TOP_CENTER>\n  <TOP_RIGHT>X</TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT>O</BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT>X</BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I choose BOTTOM_CENTER.",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "x-ai/grok-3-beta",
+      "author": "X"
+    },
+    {
+      "role": "developer",
+      "content": "It's O's turn. Open fields: MIDDLE_LEFT, MIDDLE_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER>O</TOP_CENTER>\n  <TOP_RIGHT>X</TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT>O</BOTTOM_LEFT>\n  <BOTTOM_CENTER>X</BOTTOM_CENTER>\n  <BOTTOM_RIGHT>X</BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "Okay, I will take MIDDLE_LEFT.",
+      "visibleTo": [
+        "O"
+      ],
+      "model": "google/gemini-2.5-pro-preview-03-25",
+      "author": "O"
+    }
+  ],
+  "hadError": null,
+  "winner": "O",
+  "board": {
+    "TOP_LEFT": "O",
+    "TOP_CENTER": "O",
+    "TOP_RIGHT": "X",
+    "MIDDLE_LEFT": "O",
+    "MIDDLE_CENTER": "X",
+    "MIDDLE_RIGHT": " ",
+    "BOTTOM_LEFT": "O",
+    "BOTTOM_CENTER": "X",
+    "BOTTOM_RIGHT": "X"
+  },
+  "matchup": {
+    "X": "x-ai/grok-3-beta",
+    "O": "google/gemini-2.5-pro-preview-03-25"
+  }
+}

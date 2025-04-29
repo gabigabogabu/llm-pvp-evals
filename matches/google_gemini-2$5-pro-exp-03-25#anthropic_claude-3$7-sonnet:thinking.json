@@ -1,0 +1,94 @@
+{
+  "timestamp": "2025-04-29T14:21:22.545Z",
+  "chat": [
+    {
+      "role": "developer",
+      "content": "You are playing Tic Tac Toe. You play by responding with the field you want to take. The last field you mention will be taken as your move. The fields are: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT.",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "developer",
+      "content": "You are X. Your opponent is O.",
+      "visibleTo": [
+        "X"
+      ]
+    },
+    {
+      "role": "developer",
+      "content": "You are O. Your opponent is X.",
+      "visibleTo": [
+        "O"
+      ]
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT> </TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER> </MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "Okay, I'll take MIDDLE_CENTER.",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "google/gemini-2.5-pro-exp-03-25",
+      "author": "X"
+    },
+    {
+      "role": "developer",
+      "content": "It's O's turn. Open fields: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT> </TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "Let me understand the game state:\n\n- I am O, my opponent is X\n- The game board currently looks like this:\n```\n |   |  \n---------\n | X |  \n---------\n |   |  \n```\n\n- My opponent (X) has just placed their first move in the MIDDLE_CENTER position\n- It's now my turn to play\n\nFor Tic Tac Toe, a common strategy is to take the center if it's available, but since X has already taken that, I should take a corner. This gives me better strategic options moving forward.\n\nIn this case, I'll take the TOP_LEFT corner.\n\nAfter I play TOP_LEFT as O, the board will look like:\n```\nO|   |  \n---------\n | X |  \n---------\n |   |  \n```\n\nThis is a good strategic move as it gives me multiple potential winning paths depending on where X goes next.I see that my opponent X has taken the middle center position. For my first move, I'll take one of the corners which gives me good strategic options. I'll place my O in the TOP_LEFT position.",
+      "visibleTo": [
+        "O"
+      ],
+      "model": "anthropic/claude-3.7-sonnet:thinking",
+      "author": "O"
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "developer",
+      "content": "Error playing matchup: Error: Failed to get response after 3 retries",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    }
+  ],
+  "hadError": "X",
+  "winner": null,
+  "board": {
+    "TOP_LEFT": "O",
+    "TOP_CENTER": " ",
+    "TOP_RIGHT": " ",
+    "MIDDLE_LEFT": " ",
+    "MIDDLE_CENTER": "X",
+    "MIDDLE_RIGHT": " ",
+    "BOTTOM_LEFT": " ",
+    "BOTTOM_CENTER": " ",
+    "BOTTOM_RIGHT": " "
+  },
+  "matchup": {
+    "X": "google/gemini-2.5-pro-exp-03-25",
+    "O": "anthropic/claude-3.7-sonnet:thinking"
+  }
+}

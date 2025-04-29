@@ -1,0 +1,145 @@
+{
+  "timestamp": "2025-04-29T13:39:57.684Z",
+  "chat": [
+    {
+      "role": "developer",
+      "content": "You are playing Tic Tac Toe. You play by responding with the field you want to take. The last field you mention will be taken as your move. The fields are: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT.",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "developer",
+      "content": "You are X. Your opponent is O.",
+      "visibleTo": [
+        "X"
+      ]
+    },
+    {
+      "role": "developer",
+      "content": "You are O. Your opponent is X.",
+      "visibleTo": [
+        "O"
+      ]
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT> </TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER> </MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I'll take the MIDDLE_CENTER field. This is a strategic move to control the center of the board, which provides the most opportunities for creating winning lines.\n\nMIDDLE_CENTER",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "anthropic/claude-3.5-haiku",
+      "author": "X"
+    },
+    {
+      "role": "developer",
+      "content": "It's O's turn. Open fields: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT> </TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "Okay, I will take TOP_LEFT.",
+      "visibleTo": [
+        "O"
+      ],
+      "model": "google/gemini-2.5-pro-exp-03-25",
+      "author": "O"
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER> </TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I apologize, but the MIDDLE_CENTER field is already occupied by an X from a previous move. You cannot place your X in a field that is already taken. Please choose an open field from the available options: TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, or BOTTOM_RIGHT.",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "anthropic/claude-3.5-haiku",
+      "author": "X"
+    },
+    {
+      "role": "developer",
+      "content": "It's O's turn. Open fields: TOP_RIGHT, MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER>X</TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER> </BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "That field is already taken. You previously took TOP_LEFT.\nLooking at the board:\n```\nO | X |\n--|---|--\n  | X |\n--|---|--\n  |   |\n```\nX has two in a row in the center column (TOP_CENTER, MIDDLE_CENTER). If I don't block BOTTOM_CENTER, X wins.\nI will take **BOTTOM_CENTER**.",
+      "visibleTo": [
+        "O"
+      ],
+      "model": "google/gemini-2.5-pro-exp-03-25",
+      "author": "O"
+    },
+    {
+      "role": "developer",
+      "content": "It's X's turn. Open fields: TOP_RIGHT, MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER>X</TOP_CENTER>\n  <TOP_RIGHT> </TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER>O</BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "I apologize for my mistake. You are correct that the MIDDLE_CENTER field is already occupied. Let me choose an open field strategically.\n\nI'll take TOP_RIGHT. This move blocks a potential winning line for O and keeps my options open for creating my own winning opportunities.\n\nTOP_RIGHT",
+      "visibleTo": [
+        "X"
+      ],
+      "model": "anthropic/claude-3.5-haiku",
+      "author": "X"
+    },
+    {
+      "role": "developer",
+      "content": "It's O's turn. Open fields: MIDDLE_LEFT, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT. The current board is: <tic-tac-toe>\n  <TOP_LEFT>O</TOP_LEFT>\n  <TOP_CENTER>X</TOP_CENTER>\n  <TOP_RIGHT>X</TOP_RIGHT>\n  <MIDDLE_LEFT> </MIDDLE_LEFT>\n  <MIDDLE_CENTER>X</MIDDLE_CENTER>\n  <MIDDLE_RIGHT> </MIDDLE_RIGHT>\n  <BOTTOM_LEFT> </BOTTOM_LEFT>\n  <BOTTOM_CENTER>O</BOTTOM_CENTER>\n  <BOTTOM_RIGHT> </BOTTOM_RIGHT>\n</tic-tac-toe>",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "role": "developer",
+      "content": "Error playing matchup: Error: Failed to get response after 3 retries",
+      "visibleTo": [
+        "X",
+        "O"
+      ]
+    }
+  ],
+  "hadError": "O",
+  "winner": null,
+  "board": {
+    "TOP_LEFT": "O",
+    "TOP_CENTER": "X",
+    "TOP_RIGHT": "X",
+    "MIDDLE_LEFT": " ",
+    "MIDDLE_CENTER": "X",
+    "MIDDLE_RIGHT": " ",
+    "BOTTOM_LEFT": " ",
+    "BOTTOM_CENTER": "O",
+    "BOTTOM_RIGHT": " "
+  },
+  "matchup": {
+    "X": "anthropic/claude-3.5-haiku",
+    "O": "google/gemini-2.5-pro-exp-03-25"
+  }
+}
